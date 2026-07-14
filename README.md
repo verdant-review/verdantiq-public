@@ -71,7 +71,7 @@ https://verdant.co.zw
 * Product Validation Report
 * AI Architecture
 * Deployment Plan
-
+**We have also included the source code of our yield prediction engine (in-development entering test phase) for evidence of work**
 ---
 
 # 4. System Architecture
