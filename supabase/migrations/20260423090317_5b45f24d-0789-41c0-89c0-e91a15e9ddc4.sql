@@ -1,0 +1,1 @@
+DELETE FROM public.farms WHERE id = 'f4872098-22ac-4135-9618-f9230f078028';

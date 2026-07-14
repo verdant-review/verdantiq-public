@@ -1,0 +1,25 @@
+{
+  "name": "VerdantIQ - Zimbabwe Agricultural Intelligence",
+  "short_name": "VerdantIQ",
+  "description": "Zimbabwe's Agricultural Intelligence Engine",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#14532d",
+  "theme_color": "#14532d",
+  "icons": [
+    {
+      "src": "/lovable-uploads/a1c51b73-ae65-4b26-96b4-26659d0f86d8.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/a1c51b73-ae65-4b26-96b4-26659d0f86d8.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

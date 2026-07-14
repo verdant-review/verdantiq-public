@@ -1,0 +1,35 @@
+project_id = "keagskdlvfjyegxqzrdv"
+
+[functions.ai-agronomist]
+verify_jwt = false
+
+[functions.farming-tips]
+verify_jwt = false
+
+[functions.planting-insights]
+verify_jwt = false
+
+[functions.weather-data]
+verify_jwt = false
+
+[functions.yield-prediction]
+verify_jwt = false
+
+
+[functions.satellite-ndvi]
+verify_jwt = true
+
+[functions.whatsapp-webhook]
+verify_jwt = false
+
+[functions.daily-whatsapp-digest]
+verify_jwt = false
+
+[functions.status-check]
+verify_jwt = false
+
+[functions.scheme-invite-preview]
+verify_jwt = false
+
+[functions.kb-ingest-pdf]
+verify_jwt = true

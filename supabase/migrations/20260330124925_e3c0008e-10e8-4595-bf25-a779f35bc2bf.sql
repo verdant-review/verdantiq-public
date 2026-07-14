@@ -1,0 +1,1 @@
+UPDATE whatsapp_sessions SET onboarding_step = 'ask_name', last_message_context = '{}'::jsonb, user_id = NULL WHERE phone_number = 'whatsapp:+263710298949';
