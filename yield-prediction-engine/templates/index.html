@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Crop Yield Prediction</title>
+</head>
+<body>
+    <h1>Crop Yield Prediction for Zimbabwe (2026-2039)</h1>
+    <form id="predictionForm">
+        <label for="year">Select Year:</label>
+        <select id="year" name="year">
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="item">Select Crop:</label>
+        <select id="item" name="item">
+            {% for item in items %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Predict Yield</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const year = formData.get('year');
+            const item = formData.get('item');
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: new URLSearchParams({ year: year, item: item }) // Use URLSearchParams for x-www-form-urlencoded
+            });
+
+            const resultDiv = document.getElementById('result');
+            if (response.ok) {
+                const data = await response.json();
+                resultDiv.innerHTML = '<h3>Predicted Yield (hg/ha): ' + data.predicted_yield_hg_ha.toFixed(2) + '</h3>' +
+                                       '<h3>Predicted Yield (tonnes/ha): ' + data.predicted_yield_tonnes_ha.toFixed(2) + '</h3>';
+            } else {
+                const errorData = await response.json();
+                resultDiv.innerHTML = '<h3>Error: ' + errorData.error + '</h3>';
+            }
+        });
+    </script>
+</body>
+</html>
