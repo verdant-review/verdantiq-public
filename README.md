@@ -134,7 +134,7 @@ VerdantIQ Intelligence Layer
             │
             ▼
 
-Gemini 3.5 Flash
+Gemini 2.5 Flash
 
             │
             ▼
@@ -162,7 +162,7 @@ Recommendations & Insights
 
 ### AI
 
-* Gemini 3.5 Flash
+* Gemini 2.5 Flash
 * Retrieval-Augmented Generation (RAG)
 
 ### Infrastructure
@@ -196,7 +196,7 @@ VerdantIQ combines multiple sources of agricultural information to provide conte
 
 # 6. AI Method
 
-VerdantIQ uses **Gemini 3.5 Flash** as its primary foundation model within a modular AI architecture.
+VerdantIQ uses **Gemini 2.5 Flash** as its primary foundation model within a modular AI architecture.
 
 Rather than relying solely on the foundation model, VerdantIQ applies Retrieval-Augmented Generation (RAG) to provide context-aware agricultural recommendations.
 
@@ -290,7 +290,16 @@ Core functionality validated includes:
 
 Known issues and planned improvements are documented separately.
 
-Automated unit and integration testing will be introduced as the platform matures.
+**Automated tests included in this release**
+Two lightweight test suites ship with the codebase to give reviewers a quick health signal without needing a live database:
+•	tests/unit/mechanization-score.test.ts — pure function checks for the mechanization score bands used on the farm dashboard and in the ministry report.
+•	tests/unit/responsible-ai.test.ts — asserts that the shared Responsible-AI guardrails contain the required transparency, attribution, safety-scope and locality clauses so no accidental prompt change can quietly disable them.
+
+**Running the tests**
+npm install
+npm test
+Vitest runs both suites in under a second. Add --watch during development.
+
 
 ---
 
