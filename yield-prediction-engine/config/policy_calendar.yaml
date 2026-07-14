@@ -1,0 +1,53 @@
+# Policy Calendar — VerdantIQ Yield Prediction Engine
+# Binary dummy variables encoding discrete policy interventions in Zimbabwe.
+# Each policy has active_periods with start/end dates (ISO 8601).
+# end: null means the policy is currently ongoing.
+# This file is git-versioned. Update it when policies change.
+
+policies:
+  - name: command_agriculture
+    description: >
+      State-directed farming programme mandating crop production targets,
+      input provision, and marketing controls. Significantly affects planting
+      decisions on large-scale commercial farms.
+    active_periods:
+      - start: "2018-01-01"
+        end: "2020-12-31"
+      - start: "2022-01-01"
+        end: null
+
+  - name: pfumvudza_input_subsidy
+    description: >
+      Pfumvudza/Intwasa conservation agriculture programme providing free
+      inputs (seed, fertilizer) to smallholder farmers. Increases effective
+      planted area and yield on smallholder rain-fed plots.
+    active_periods:
+      - start: "2020-07-01"
+        end: null
+
+  - name: foreign_currency_restriction
+    description: >
+      RBZ statutory instrument restricting foreign currency transactions
+      and fixing official exchange rates. Increases input costs for
+      commercially-oriented farmers purchasing agro-chemicals in USD.
+    active_periods:
+      - start: "2019-06-01"
+        end: "2021-05-31"
+
+  - name: grain_marketing_board_monopoly
+    description: >
+      Periods when the Grain Marketing Board (GMB) held exclusive rights
+      to purchase grain, suppressing farmer incentive to invest in yield.
+    active_periods:
+      - start: "2008-01-01"
+        end: "2009-12-31"
+      - start: "2019-01-01"
+        end: "2020-06-30"
+
+  - name: fuel_subsidy
+    description: >
+      Government fuel subsidy or price controls reducing transport and
+      mechanisation costs for commercial farmers.
+    active_periods:
+      - start: "2008-01-01"
+        end: "2009-06-30"
